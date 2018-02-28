@@ -1,5 +1,17 @@
-# Forbid Pwned Passwords
-## forbid-pwned-passwords
+=== Forbid Pwned Passwords ===
+Contributors: heyitsmikeyv
+Donate link: https://paypal.me/heyitsmikeyv
+Tags: security, passwords, pwned, breach, haveibeenpwned
+Requires at least: 3.5
+Tested up to: 4.9
+Stable tag: trunk
+Requires PHP: 5.2.4
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+
+Disallow usage of passwords found in the Have I Been Pwned breached password database.
+
+== Description ==
 
 Protect your WordPress site's users from using breached passwords!
 
