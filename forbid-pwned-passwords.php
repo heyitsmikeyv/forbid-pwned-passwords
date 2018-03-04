@@ -3,7 +3,7 @@
 Plugin Name:  Forbid Pwned Passwords
 Plugin URI:   https://github.com/heyitsmikeyv/forbid-pwned-passwords
 Description:  Disallow usage of passwords found in the Have I Been Pwned breached password database.
-Version:      0.1.0
+Version:      0.1.1
 Author:       Michael Veenstra
 Author URI:   https://michaelveenstra.com/
 License:      GPL3
@@ -76,6 +76,11 @@ function fpp_hibp_check($pwd) {
   $prefix = substr($hash, 0, 5);
   $suffix = substr($hash, 5);
   $response = wp_remote_get($api . $prefix);
+  
+  // Return 0 on wp_remote_get error
+  if ( is_wp_error( $response ) ) {
+    return 0;
+  }
 
   // Check response to see if there's a match.
   // If so, catch an instance count from the response.
